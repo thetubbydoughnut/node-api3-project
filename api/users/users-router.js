@@ -86,7 +86,7 @@ router.post('/:id/posts', validateUserId, validatePost, (req, res, next) => {
   .catch(next);
 });
 
-router.use((error, req, res, next) => {
+router.use((error, req, res, next) => { //eslint-disable-line
   res.status(error.status || 500).json({
     message: error.message,
     customMessage: 'Oh no its broke in the users router'
